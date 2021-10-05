@@ -7,21 +7,11 @@ USER root
 RUN ["apt-get", "update"]
 
 RUN ["apt-get", "install", "-y", "zsh"]
+RUN ["apt-get", "install", "fonts-powerline"]
 
 USER gitpod
 
-# clone
-RUN git clone https://github.com/powerline/fonts.git --depth=1
-# install
-RUN cd fonts
-# clean-up a bit
-RUN cd ..
-RUN rm -rf fonts
 
-# set the zsh theme 
-RUN git clone https://github.com/dbestevez/agitnoster-theme.git
-RUN cd agitnoster-theme
-RUN ./install.sh
 ENV ZSH_THEME random
 
 # Install Oh-My-Zsh
