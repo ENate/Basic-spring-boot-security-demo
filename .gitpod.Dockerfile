@@ -17,8 +17,8 @@ ENV ZSH_THEME random
 
 # Install Oh-My-Zsh
 RUN wget https://github.com/dbestevez/agitnoster-theme.git
-RUN cd agitnoster-theme
-RUN sudo sh ./install.sh
+# RUN cd agitnoster-theme
+# RUN sudo sh ./install.sh
 RUN wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | zsh || true
 
   # start zsh
