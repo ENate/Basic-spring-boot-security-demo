@@ -10,9 +10,9 @@ RUN ["apt-get", "install", "-y", "zsh"]
 
 USER gitpod
 
-  # set the zsh theme 
+# set the zsh theme 
 
-ENV ZSH_THEME cloud
+ENV ZSH_THEME random
 
 # Install Oh-My-Zsh
 
