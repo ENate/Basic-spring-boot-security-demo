@@ -14,7 +14,6 @@ USER gitpod
 RUN git clone https://github.com/powerline/fonts.git --depth=1
 # install
 RUN cd fonts
-RUN ./install.sh
 # clean-up a bit
 RUN cd ..
 RUN rm -rf fonts
