@@ -2,6 +2,15 @@
 
 Spring boot, spring security, spring JPA Data, Thymeleaf and more.
 
-## Aim
+## Tech Stack
 
-To demonstrate the use of spring security in a web application.
+- Jdk 11+
+- Spring boot
+- spring security
+- Embedded database
+- Thymeleaf
+- maven
+
+To run the application, clone the repo:
+
+``` git clone <repo_name> ```
