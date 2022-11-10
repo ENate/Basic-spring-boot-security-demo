@@ -1,5 +1,15 @@
 {
   "image": "mcr.microsoft.com/devcontainers/universal:2",
   "features": {
-  }
+},
+"customizations": {
+	"vscode": {
+		"extensions": [
+			"vscjava.vscode-java-pack",
+			"Pivotal.vscode-boot-dev-pack",
+			"YouMayCallMeV.vscode-java-saber",
+			"loiane.java-spring-extension-pack"
+		]
+	}
+}
 }
