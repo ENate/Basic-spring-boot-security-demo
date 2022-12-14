@@ -14,7 +14,10 @@ The Java-Spring application presented in this repository represents a  user form
 - Spring boot
 - Spring JPA Data
 - Hibernate
-- HML, Thymeleaf and CSS
+- HMTL, Thymeleaf and CSS
+
+## Database
+- Replace the H2 database with either MySQL or PostgreSQL
 
 To run the application, clone the repo:
 
