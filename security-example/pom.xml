@@ -15,31 +15,52 @@
 	<description>A spring boot, security, MySQL database application</description>
 		
 	<dependencies>
+		<!-- Start spring dependencies  -->
+		<!-- Start spring boot starter actuator -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-actuator</artifactId>
 		</dependency>
+		<!-- End spring boot starter actuator -->
+		<!-- Start spring boot starter web -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
-
+		<!-- End spring boot starter web -->
+		<!-- Start spring boot starter devtools -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-devtools</artifactId>
 			<scope>runtime</scope>
 			<optional>true</optional>
 		</dependency>
+		<!-- End spring boot starter devtools -->
+		<!-- Start spring boot starter security -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-security</artifactId>
+		</dependency>
+		<!-- End spring boot starter security -->
+		<!-- End spring boot dependencies -->
+
+		<!-- Start Third party dependencies -->
+		<!-- Start lombok dependency -->
 		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
 			<optional>true</optional>
 		</dependency>
+		<!-- End lombok dependency -->
+		<!-- End Third party dependencies -->
+
+		<!-- Start spring boot and Third party testing dependencies -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+		<!-- End spring boot and Third party testing dependencies -->
 	</dependencies>
 
 </project>
