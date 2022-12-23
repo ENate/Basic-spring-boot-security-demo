@@ -23,8 +23,10 @@ public class SecurityConfig {
         return http
                     // autenticated
                     .authorizeHttpRequests(authConfig -> {
-                        authConfig.requestMatchers("/admin").authenticated();
-                        authConfig.anyRequest().permitAll();
+                        authConfig.requestMatchers("/").permitAll();
+                        authConfig.requestMatchers("/error").permitAll();
+                        authConfig.requestMatchers("/favicon.ico").permitAll();
+                        authConfig.anyRequest().authenticated();
                     })
                     // user fornLogin
                     .formLogin(withDefaults())
