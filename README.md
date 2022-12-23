@@ -4,20 +4,17 @@ The Java-Spring application presented in this repository represents a  user form
 
 ## Tech Stack
 
-- Jdk 17+
+- Java/Jdk 17+
 - Spring boot
-- spring security
-- Embedded database
-- Thymeleaf
-- maven
+- any ORM database
+- maven (adaptable to gradle)
 - Spring Security
-- Spring boot
 - Spring JPA Data
 - Hibernate
-- HMTL, Thymeleaf and CSS
+- HMTL, Thymeleaf and CSS (Later!)
 
 ## Database
-- Replace the H2 database with either MySQL or PostgreSQL (if you wish to use any other database).
+- Replace the  database with any of the following choices: MySQL or PostgreSQL (if you wish to use any other database).
 
 To run the application, clone the repo:
 
