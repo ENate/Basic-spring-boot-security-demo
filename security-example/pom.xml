@@ -11,8 +11,9 @@
 	<artifactId>security-example</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>security-example</name>
+	<packaging>jar</packaging>
 	<description>A spring boot, security, MySQL database application</description>
-	
+		
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
