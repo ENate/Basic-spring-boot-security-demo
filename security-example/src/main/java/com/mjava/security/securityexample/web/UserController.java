@@ -12,7 +12,7 @@ public class UserController {
     @GetMapping("/")
     public String index() {
         log.info("Visiting the home page");
-        return "This is our home page";
+        return "Welcome to our home page";
 
     }
 
