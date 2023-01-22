@@ -1,8 +1,8 @@
-# Spring security and thymeleaf application
+### A Spring boot and security Example
 
 This repository contains a spring boot 3 and spring security 6.0+. The following tech stack is reuired to run the example:
 
-## Tech Stack
+### Tech Stack
 
 - Java/Jdk 17+
 - Spring boot
