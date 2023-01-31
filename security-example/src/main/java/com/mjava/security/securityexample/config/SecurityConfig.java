@@ -21,14 +21,14 @@ public class SecurityConfig {
     @Bean
     SecurityFilterChain dFilterChain(HttpSecurity http) throws Exception {
         return http
-                    // autenticated
+                    // authenticated
                     .authorizeHttpRequests(authConfig -> {
                         authConfig.requestMatchers("/").permitAll();
                         authConfig.requestMatchers("/error").permitAll();
                         authConfig.requestMatchers("/favicon.ico").permitAll();
                         authConfig.anyRequest().authenticated();
                     })
-                    // user fornLogin
+                    // user formLogin
                     .formLogin(withDefaults())
                     .build();
     }
@@ -36,7 +36,7 @@ public class SecurityConfig {
     @Bean
     public UserDetailsService userDetailsService() {
         UserDetails myUser = User.builder()
-                            .username("user")
+                            .username("nath")
                             .password("{noop}password")
                             .authorities("ROLE_USER")
                             .build();

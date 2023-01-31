@@ -1,6 +1,7 @@
 ### A Spring boot and security Example
 
-This repository contains a spring boot 3.0+ and spring security 6.0+. The following tech stack is reuired to run the example:
+This repository contains a spring boot 3.0+ and spring security 6.0+. 
+The following tech stack is reuired to run the example:
 
 ### Tech Stack
 
