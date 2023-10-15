@@ -11,7 +11,7 @@ import java.util.stream.Stream;
 
 @Configuration
 public class UserService {
-    private final String[] names ="johuz,ertzh,hjuitz,njkiu,dfret,xcdfew,mnhjg,loikut,bnvfde".split(",");
+    private final String[] names ="master,ertzh,hjuitz,njkiu,dfret,xcdfew,mnhjg,loikut,bnvfde".split(",");
     private final AtomicInteger counter= new AtomicInteger();
 
     private final Flux<UserEntity> users = Flux.fromStream(
@@ -24,5 +24,9 @@ public class UserService {
     @Bean
     Flux<UserEntity> userEntityFlux() {
         return this.users.publish().autoConnect();
+    }
+
+    public Flux<UserEntity> fluxUsers() {
+        return null;
     }
 }

@@ -30,6 +30,7 @@ public class SecurityConfig {
                     })
                     // user formLogin
                     .formLogin(withDefaults())
+                    // .oauth2ResourceServer(spec -> spec.jwt(Customizer.withDefaults()))
                     .build();
     }
 

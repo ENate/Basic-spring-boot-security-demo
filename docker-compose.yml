@@ -1,0 +1,83 @@
+version: '3.7'
+services:
+    # keyclaock
+    postgres:
+        container_name: db
+        image: "postgres:14.4"
+        healthcheck:
+            test: [ "CMD", "pg_isready", "-q", "-d", "postgres", "-U", "root" ]
+            timeout: 45s
+            interval: 10s
+            retries: 10
+        volumes:
+            - .vit-platform/keycloak/postgres_data:/var/lib/postgresql/data
+            #- ./sql:/docker-entrypoint-initdb.d/:ro # turn it on, if you need run init DB
+        environment:
+            POSTGRES_USER: postgres
+            POSTGRES_PASSWORD: postgres
+            POSTGRES_DB: keycloak
+            POSTGRES_HOST: postgres
+        # networks:
+        #    - local
+        ports:
+            - "5432:5432"
+
+    pgadmin:
+        container_name: pgadmin
+        image: "dpage/pgadmin4:5.1"
+        environment:
+            PGADMIN_DEFAULT_EMAIL: postgres@domain.local
+            PGADMIN_DEFAULT_PASSWORD: postgres
+        ports:
+            - "5050:80"
+    
+    keycloak:
+        image: quay.io/keycloak/keycloak:19.0
+        container_name: keycloak
+        command: start-dev --import-realm
+        volumes:
+            - ./vit-platform/keycloak:/opt/keycloak/data/import
+        environment:
+            - KEYCLOAK_ADMIN=user
+            - KEYCLOAK_ADMIN_PASSWORD=password
+        ports:
+            - 8080:8080
+
+
+    # Hashicorp vault
+    vault:
+        image: hashicorp/vault
+        container_name: vault
+        hostname: vault
+        ports:
+            -   "8200:8200"
+        restart: always
+        environment:
+            - VAULT_ADDR=http://localhost:8200
+            #VAULT_DEV_ROOT_TOKEN_ID: 'root'
+            #VAULT_DEV_LISTEN_ADDRESS: '0.0.0.0:8200'
+        volumes:
+            - ./docker/vault/vault.hcl:/vault/vault/vault.hcl
+            - ./docker/vault/vault-data:/vault/file/
+            #- /docker/vault/logs:/vault/logs
+            #- /docker/vault/file:/vault/file
+            #- /docker/vault/config:/vault/config
+        cap_add:
+            - IPC_LOCK
+        command: server
+    # vault auto init
+    vault-init:
+        image: hashicorp/vault
+        container_name: vault-init
+        environment:
+            - VAULT_ADDR=http://vault:8200
+            - MY_VAULT_TOKEN=${MY_VAULT_TOKEN:-test}
+        volumes:
+            - ./docker/vault/vault-root-token:/vault/file/vault-root-token
+            - ./docker/vault/vault-init.sh:/usr/local/bin/vault-init.sh
+            - ./docker/vault/vault-data:/vault/file/
+        command: /usr/local/bin/vault-init.sh
+        restart: on-failure
+        depends_on:
+            - vault
+        # entrypoint: vault server -config=/vault/config/vault.json

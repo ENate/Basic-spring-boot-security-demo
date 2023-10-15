@@ -1,7 +1,9 @@
 package com.mjava.security.securityexample.web;
 
 import com.mjava.security.securityexample.entity.UserEntity;
-import lombok.RequiredArgsConstructor;
+import io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker;
+import io.github.resilience4j.retry.annotation.Retry;
+import io.github.resilience4j.timelimiter.annotation.TimeLimiter;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -37,8 +39,11 @@ public class UserController {
         return "This is the private page!!!";
     }
 
+    @CircuitBreaker(name = "example")
+    @TimeLimiter(name = "example")
+    @Retry(name = "example")
     @GetMapping(produces = MediaType.TEXT_EVENT_STREAM_VALUE, value = "/users")
-    Flux<UserEntity> get() {
+    Flux<UserEntity> getFluxedUsers() {
         return this.users;
     }
 }
