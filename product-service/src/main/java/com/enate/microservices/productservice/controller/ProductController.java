@@ -31,7 +31,7 @@ public class ProductController {
         productService.createProduct(productRequest);
     }
 
-    @GetMapping
+    @GetMapping("/list")
     @ResponseStatus(HttpStatus.OK)
     public List<ProductResponse> getAllProducts() {
         return productService.getAllProducts();

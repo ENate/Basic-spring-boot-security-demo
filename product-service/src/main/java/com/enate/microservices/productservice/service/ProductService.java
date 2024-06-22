@@ -9,16 +9,19 @@ import com.enate.microservices.productservice.dto.ProductResponse;
 import com.enate.microservices.productservice.model.Product;
 import com.enate.microservices.productservice.repository.ProductRepository;
 
-import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
 @Service
-@RequiredArgsConstructor
+// @RequiredArgsConstructor
 public class ProductService {
 
     // DI for ProductRepository Interface
-    private ProductRepository productRepository;
+    private final ProductRepository productRepository;
+
+    public ProductService(ProductRepository repository) {
+        this.productRepository = repository;
+    }
 
     public void createProduct(ProductRequest productRequest) {
         // Build a product example
@@ -30,7 +33,7 @@ public class ProductService {
     // Save product object using save from Spring Data Mongo
     productRepository.save(product);
     // Display message is successfully saved
-    log.info("Saved Product with ID {}", product.getId());
+    log.info("Saved {} with ID {}", product.getName(), product.getId());
     }
 
     /**
