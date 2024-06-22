@@ -1,0 +1,8 @@
+# Define custom port number
+server:
+    port: 8081 # port number
+# Define spring Mongo URI
+spring:
+    data:
+        mongodb:
+            uri: mongodb://root:password@localhost:27017/product-service?authSource=admin

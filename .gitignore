@@ -26,6 +26,6 @@ target/
 /nbdist/
 /.nb-gradle/
 build/
-
+docker/mongodb
 ### VS Code ###
 .vscode/

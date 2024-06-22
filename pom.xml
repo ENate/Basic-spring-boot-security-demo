@@ -5,24 +5,25 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>3.1.4</version>
+		<version>3.3.1</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.mjava.security</groupId>
+	<groupId>com.enate.microservices</groupId>
 	<artifactId>main-parent</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>1.0-SNAPSHOT</version>
 	<name>main-parent</name>
 	<packaging>pom</packaging>
-	<description>Parent POM for child modules </description>
+	<description>Parent POM for services modules </description>
 	<properties>
-		<java.version>17</java.version>
+		<java.version>22</java.version>
 	</properties>
 
-	<!-- 'Child' Modules for application parent -->
+	<!-- Start modules -->
 	<modules>
-		<module>security-example</module>
+		<module>product-service</module>
 	</modules>
-	
+
+	<!-- 'Child' Modules for application parent -->
 	<dependencies>
 		<!-- Start spring boot starter actuator -->
 		<dependency>
@@ -30,6 +31,14 @@
 			<artifactId>spring-boot-starter-actuator</artifactId>
 		</dependency>
 		<!-- End spring boot starter actuator -->
+		<!-- Start spring devtools dependency -->
+		<dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-devtools</artifactId>
+            <scope>runtime</scope>
+            <optional>true</optional>
+        </dependency>
+		<!-- End spring devtools dependency -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter</artifactId>
