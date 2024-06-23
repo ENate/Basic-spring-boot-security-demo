@@ -3,12 +3,12 @@ package com.enate.microservices.orderservice.service;
 import java.util.UUID;
 
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.enate.microservices.orderservice.dto.OrderRequest;
 import com.enate.microservices.orderservice.model.Order;
 import com.enate.microservices.orderservice.repository.OrderRepository;
 
-import jakarta.transaction.Transactional;
 
 @Service
 @Transactional // Provides necessary interceptions and transaction control
