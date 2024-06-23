@@ -21,6 +21,7 @@
 	<!-- Start modules -->
 	<modules>
 		<module>product-service</module>
+		<module>order-service</module>
 	</modules>
 
 	<!-- 'Child' Modules for application parent -->

@@ -1,4 +1,17 @@
+# Start All services
 services:
+    # MySQL service
+    mysql:
+        image: mysql:8.3.0 # mysql image
+        container_name: mysql # image name
+        ports:  # define port
+            - "3306:3306" # port value
+        environment: # define environmental  values
+            MYSQL_ROOT_PASSWORD: mysql
+        volumes:
+            - ./docker/mysql/init.sql:/docker-entrypoint-initdb.d/init.sql
+            - ./docker/mysql/data:/var/lib/mysql
+    # start Mongo service
     mongo:
         image: mongo:7.0.5
         container_name: mongo

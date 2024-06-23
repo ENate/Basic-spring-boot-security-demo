@@ -10,14 +10,13 @@
     </parent>
 
     <groupId>com.enate.microservices</groupId>
-    <artifactId>product-service</artifactId>
+    <artifactId>order-service</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>jar</packaging>
 
-    <name>product-service</name>
+    <name>order-service</name>
     <!-- The project's website -->
-    <url>http://www.product-service.com</url>
-
+    <url>http://www.order-service.com</url>
     <!-- Start all dependencies -->
     <dependencies>
         <!-- Start Spring Boot Dependencies -->
@@ -27,21 +26,38 @@
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
         <!-- End Web dependency-->
-        <!-- Start Spring Data MongoDB dependency -->
+        <!-- Start Web dependency for endpoints -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-data-mongodb</artifactId>
+            <artifactId>spring-boot-starter-data-jpa</artifactId>
         </dependency>
-        <!-- End Spring Data MongoDB dependency -->
-        <!-- End Spring Boot Dependencies-->
-        <!-- Start Third party dependencies -->
+        <!-- End Web dependency-->
+        <!-- End Spring Boot Dependencies -->
+        <!-- Start Third party Dependencies -->
+        <!-- End Third party Dependencies -->
+        <!-- Start Flyway dependency to execute database migrations -->
+        <dependency>
+            <groupId>org.flywaydb</groupId>
+            <artifactId>flyway-core</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.flywaydb</groupId>
+            <artifactId>flyway-mysql</artifactId>
+        </dependency>
+        <!-- End Flyway dependency to execute database migrations -->
+        <!-- Start MYSQL Driver -->
+        <dependency>
+            <groupId>com.mysql</groupId>
+            <artifactId>mysql-connector-j</artifactId>
+            <scope>runtime</scope>
+        </dependency>
+        <!-- End MYSQL Driver -->
         <!-- Start lombok dependency to reduce boiler plate code -->
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
         </dependency>
         <!-- End lombok dependency-->
-        <!-- End Third party dependencies -->
         <!-- Start Testing dependencies -->
         <!-- Start Testcontainers dependencies -->
         <dependency>
@@ -56,18 +72,10 @@
         </dependency>
         <dependency>
             <groupId>org.testcontainers</groupId>
-            <artifactId>mongodb</artifactId>
+            <artifactId>mysql</artifactId>
             <scope>test</scope>
         </dependency>
         <!-- End Testcontainers dependencies -->
-        <!-- Start rest-assured dependency-->
-        <dependency>
-            <groupId>io.rest-assured</groupId>
-            <artifactId>rest-assured</artifactId>
-            <version>5.4.0</version>
-        </dependency>
-        <!-- End rest-assured dependency-->
         <!-- End Testing dependencies -->
     </dependencies>
-    <!-- End all dependencies -->
 </project>
