@@ -76,6 +76,13 @@
             <scope>test</scope>
         </dependency>
         <!-- End Testcontainers dependencies -->
+        <!-- Start rest-assured dependency-->
+        <dependency>
+            <groupId>io.rest-assured</groupId>
+            <artifactId>rest-assured</artifactId>
+            <version>5.4.0</version>
+        </dependency>
+        <!-- End rest-assured dependency-->
         <!-- End Testing dependencies -->
     </dependencies>
 </project>
