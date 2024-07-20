@@ -40,7 +40,7 @@ public class ProductService {
      * Returns a list of products from the ProductRepository
      * @param product Product Object
      * @return A Recod of DTO ProductResponse
-     * Should be done with case especially in production.
+     * Should be done with care especially in production.
      */
 
     public List<ProductResponse> getAllProducts() {
