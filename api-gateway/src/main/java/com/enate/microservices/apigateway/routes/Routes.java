@@ -14,21 +14,21 @@ public class Routes {
     @Bean
     RouterFunction<ServerResponse> pServiceRoute() {
         return route("product_service")
-        .route(RequestPredicates.path("/api/product"), http("http://localhost:8080"))
+        .route(RequestPredicates.path("/api/product"), http("http://localhost:8081"))
         .build();
     }
 
     @Bean
     public RouterFunction<ServerResponse> orderServiceRoute() {
         return route("order_service")
-                .route(RequestPredicates.path("/api/order"), http("http://localhost:8081"))
+                .route(RequestPredicates.path("/api/order"), http("http://localhost:8082"))
                 .build();
     }
  
     @Bean
     public RouterFunction<ServerResponse> inventoryServiceRoute() {
         return route("inventory_service")
-                .route(RequestPredicates.path("/api/inventory"), http("http://localhost:8082"))
+                .route(RequestPredicates.path("/api/inventory"), http("http://localhost:8083"))
                 .build();
     }
 
