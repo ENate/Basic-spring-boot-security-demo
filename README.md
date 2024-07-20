@@ -1,17 +1,16 @@
-### A Spring boot and security Example
+## A Spring boot and security Example
 
-This repository contains a spring boot 3.0+ and spring security 6.0+. 
-The following tech stack is reuired to run the example:
+We present a spring boot (3.3.0+), spring cloud, databases and other third parties.s
 
 ### Tech Stack
 
-- Java/Jdk 17+
+- Java/Jdk 22+
 - Spring boot
 - maven ( or gradle with adaptations)
-- Spring Security
-In order to run the application, clone the repo as follows:
+- Spring Cloud
+In order to run the application, clone the repo:
 
-``` git clone <repo_name> ``` and run using one of your favorite IDEs.
+``` git clone <repo_name> ``` and run in your favorite IDEs.
 
 ### Running the application
 
