@@ -8,6 +8,13 @@ We present a spring boot (3.3.0+), spring cloud, databases and other third parti
 - Spring boot
 - maven ( or gradle with adaptations)
 - Spring Cloud
+
+### Tech Infrastructure
+- Keycloak for identity and accounts management
+- Hashicorp Vault to store secrets
+- Docker Compose to simplify development and deployment
+- Kuberbetes to deploy and effectively manage microservices
+
 In order to run the application, clone the repo:
 
 ``` git clone <repo_name> ``` and run in your favorite IDEs.
